@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>PVC Images</title>
+    <meta charSet="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: verdana, 'poppins', sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background: #f4f6f8;
+        }
+        header{
+            height: 75px;
+            width: 100%;
+            background: white;
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 30px;
+            box-shadow: 0 1px 2px 0 rgb(0,0,0,0.5);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .logo{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+        }
+        .logo i{
+            height: 40px;
+            width: 40px;
+            background-color: rgb(243, 218, 172);
+            color: rgb(253, 88, 88);
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo h2{
+            font-size: 30px;
+            font-weight: 700;
+            color: #1f2937;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            padding-right: 10px;
+            cursor: default;
+        }
+        .navbar{
+            display: flex;
+            gap: 35px;
+            align-items: center;
+        }   
+        .navbar a{
+            text-decoration: none;
+            color: #374151;
+            transition: color 0.3s ease;
+            cursor: pointer;
+            font-weight: 400;
+            font-size: 18px;
+            letter-spacing: 2px;
+        }
+        .navbar a:hover{
+            color: #2563eb;
+        }   
+        .button{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .button a{
+            text-decoration: none;
+            color: white;
+            background-color: #2563eb;
+            padding: 15px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-left: 40px;
+            white-space: nowrap;
+            transition: 0.3s ease;
+        }
+        .button a:hover{
+            background-color: whitesmoke;
+            border: 1px solid #2563eb;
+
+        }
+
+        .menu-toggle{
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        @media (max-width: 768px) {
+            .navbar{
+                display: none;
+                flex-direction: column;
+                background-color: #b3b4b6;
+                width: 100%;
+                padding: 10px;
+                align-items: center;
+                gap: 10px;
+                position: absolute;
+                top: 60px;
+                font-size: 30px;
+                font-weight: bold;
+                left: 0;
+                box-shadow: 0 2px 10px rgba(160, 157, 157, 0.3);
+            }
+            .navbar a{
+                color: white;
+            }
+            .navbar.active{
+                display: flex;
+            }
+            .menu-toggle{
+                display: block;
+            }
+            button a{
+                width: 100%;
+                margin-top: 10px;
+                margin-left: 0;
+                text-align: center;
+            }
+            .button a:hover{
+                background-color: white;
+            }
+        }
+        .more-underline{
+            position: relative;
+            display: inline-block;
+            margin-top: 8px;
+            font-size: 14px;
+            color: #1565c0;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .more-underline::after{
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -3px;
+            width: 0;
+            height: 2px;
+            background: #1565c0;
+            transition: 0.3s;
+        }
+        .more-underline:hover::after{
+            width: 100%;
+        }
+
+
+        .box5{
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+        .box5-1{
+            text-align: center;
+            margin-bottom: 64px;
+            margin-top: 44px;
+        }
+        .box5-1 h2{
+            font-size: 2.25rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 16px;
+             cursor: default;
+        }
+        .box5-1 p{
+            font-size: 1.25rem;
+            color: #4b5563;
+             cursor: default;
+        }
+        .product-container{
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            padding: 20px;
+        }
+        .product-card{
+            width: 100%;
+            background-color: #ffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+            padding: 12px;
+            transition: 0.3s ease;
+        }
+        .product-card:hover{
+            box-shadow: 0 10px 30px rgba(0,0,0,0.28);
+            transform: translateY(-6px);
+        }
+        .product-card img{
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        .title{
+            font-size: 16px;
+            margin: 8px 0 4px;
+        }
+        .rating{
+            font-size: 14px;
+            color: #2e7d32;
+            font-weight: 500;
+        }
+        .rating span{
+            color: #777;
+            font-size: 12px;
+        }
+        .highlight{
+            font-size: 13px;
+            margin: 6px 0;
+            color: #555;
+        }
+        .price{
+            font-size: 18px;
+            font-weight: bold;
+            color: #1565c0;
+        }
+        .price span{
+            font-size: 13px;
+            color: #555;
+        }
+        @media (max-width: 992px){
+            .product-container{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        @media (max-width: 768px){
+            .product-container{
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        @media (max-width: 480px){
+            .product-container{
+                grid-template-columns: 1fr;
+            }
+        }
+        .product-card {
+          display: none;
+        }   
+
+        .center {
+          text-align: center;
+          margin-top: 20px;
+        }
+        #moreBtn{
+            border: none;
+            padding: 15px;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            background: #2563eb;
+            color: white;
+            border-radius: 10px;
+            font-size: 15px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        #moreBtn:hover{
+            background: white;
+            color: #2563eb;
+            border: 1px solid #2563eb;
+            margin-bottom: 30px;
+        }
+
+        /* Lightbox background */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        /* Image in lightbox */
+        .lightbox-content {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 8px;
+            box-shadow: 0 0 20px #fff;
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: white;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .close:hover {
+            color: #ccc;
+        }
+
+        /* Optional: cursor pointer on all product images */
+        .product-img {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .product-img:hover {
+            transform: scale(1.05);
+        }
+
+        
+        .footer{
+            background-color: #1f2937;
+            color: #ffffff;
+            padding-top: 3rem;
+            padding-bottom: 3rem;
+        }
+
+        .foot{
+            max-width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+        .foot1{
+            display: grid;
+            gap: 2rem;
+        }
+        @media (min-width: 768px) {
+            .foot1{
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .foot1-1 h3{
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+        .foot1-1 p{
+            color: #d1d5db;
+            margin-bottom: 1rem;
+        }
+        .foot1-1-1{
+            display: flex;
+        }
+        .foot1-1-1 > * + * {
+            margin-left: 1rem;
+        }
+        .foot1-1-1 i{
+            color: #ffffff;
+        }
+        .foot1-1-2{
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: #2563eb;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .foot1-1-2:hover{
+            background-color: #1d4ed8;
+        }
+        .foot1-1-3{
+            width: 2.5rem;
+            height: 2.5rem;
+            background-color: green;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: 0.3s ease;
+        }
+        .foot1-1-3:hover{
+            background-color: green;
+        }
+
+        .foot1-2 h4{
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .foot1-2 ul{
+            color: #d1d5db;
+        }
+        .foot1-2 ul > * + * {
+            margin-top: 0.5rem;
+        }
+
+        .foot1-3 h4{
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        .foot1-3-1{
+            color: #d1d5db;
+        }
+        .foot1-3-1 > * + * {
+            margin-top: 0.5rem;
+        }
+
+        .foot2{
+            border-top: 1px solid #374151;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            text-align: center;
+            color: #9ca3af;
+        }
+    </style>
+    <script>
+        function toggleMenu() {
+            document.querySelector('.navbar').classList.toggle('active');
+            document.querySelector('.button').classList.toggle('active');
+        }
+
+        // Select all product images
+        const productImgs = document.querySelectorAll('.product-img');
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        const closeBtn = document.querySelector('.close');
+
+        // Open lightbox when any product image is clicked
+        productImgs.forEach(img => {
+            img.addEventListener('click', () => {
+                lightbox.style.display = 'flex';
+                lightboxImg.src = img.src;
+                lightboxImg.alt = img.alt;
+            });
+        });
+
+        // Close lightbox when close button clicked
+        closeBtn.addEventListener('click', () => {
+            lightbox.style.display = 'none';
+        });
+
+        // Close lightbox when clicking outside the image
+        lightbox.addEventListener('click', (e) => {
+            if (e.target === lightbox) {
+                lightbox.style.display = 'none';
+            }
+        });
+
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-house"></i>&nbsp;&nbsp;
+            <h2 style="font-family: cursive;">Kanik Plaster Of Paris</h2>
+        </div>
+        <div class="menu-toggle" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></div>
+        <nav class="navbar">
+            <a href="Index.html#home" class="more-underline">Home</a>
+            <a href="Index.html#services" class="more-underline">Services</a>
+            <a href="Index.html#gallery" class="more-underline">Gallery</a>
+            <a href="Index.html#contact" class="more-underline">Contact</a>
+        
+        <div class="button">
+            <a href="tel:9833418406"><i class="fa-solid fa-phone"></i>Call Now</a>
+        </div>
+        </nav>
+    </header>
+    <div class="main">
+        <div class="box5">
+            <div class="box5-1">
+                <h2>Wall PVC Sheets & Design</h2>
+                <p>Explore to take a look at our projects</p>
+            </div>
+        </div>
+        <div class="product-container">
+            <div class="product-card">
+                <img src="wallsheet/wallimg2.jpeg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: rgb(255, 255, 4);"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg3.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg4.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: rgb(255, 255, 4);"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg5.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg6.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: rgb(255, 255, 4);"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg7.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg8.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: rgb(255, 255, 4);"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg9.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg10.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: rgb(255, 255, 4);"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg11.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg12.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: rgb(255, 255, 4);"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg13.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg14.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: rgb(255, 255, 4);"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg15.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg16.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: rgb(255, 255, 4);"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg17.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+            <div class="product-card">
+                <img src="wallsheet/wallimg18.jpg" alt="POP False Ceiling Design" class="product-img"/>
+                
+                <h3 class="title">Modern PVC False Ceiling</h3>
+                <div class="rating">
+                    <font style="color: yellow;"><i class="fa-solid fa-star"></i></font>4.5 <span>(Best Seller)</span>
+                </div>
+                <p class="highlight">Premium finish with LED lighting</p>
+                <div class="price">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>220 <span>/ sq.ft.</span>
+                </div>
+            </div>
+        </div>
+        <div class="center">
+            <button id="moreBtn">More Results</button>
+        </div>
+        <div id="lightbox" class="lightbox">
+            <span class="close">&times;</span>
+            <img class="lightbox-content" id="lightbox-img">
+        </div>
+    </div>
+    <footer class="footer">
+        <div class="foot">
+            <div class="foot1">
+                <div class="foot1-1">
+                    <h3 style="font-family:Pacifico, serif">Kanik Plaster of Paris</h3>
+                    <p>Excellent interior solutions with 25 years of experience</p>
+                    <div class="foot1-1-1">
+                        <a href="tel:9833418406" class="foot1-1-2">
+                            <i class="fa-solid fa-phone"></i>               
+                        </a>
+                        <a href="https://wa.me/919833418406"  class="foot1-1-3">
+                            <i class="fa-brands fa-whatsapp"></i>              
+                        </a>
+                    </div>
+                </div>
+                <div class="foot1-2">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>POP False Ceiling</li>
+                        <li>PVC False Ceiling</li>
+                        <li>Wall POP Design</li>
+                        <li>Professional Painting</li>
+                        <li>Complete Interior</li>
+              
+                     </ul>
+                </div>
+                <div class="foot1-3">
+                    <h4>Contact</h4>
+                    <div class="foot1-3-1">
+                        <p>📞 9833418406</p>
+                        <p>📞 7521013187</p>
+                        <p>📍 Bangladesh Gandhi Nagar Chawl, Uttan Road Near Sham Shan Bhumi, Bhayandar West</p>
+              
+                    </div>
+                </div>
+            </div>
+            <div class="foot2">
+                <p>© 2024 Kanik Plaster of Paris. All rights reserved.</p>
+          
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+
+          const items = document.querySelectorAll(".product-container .product-card");
+          const moreBtn = document.getElementById("moreBtn");
+
+          const STEP = 8;        
+          let visibleCount = 0;
+
+          function showNextItems() {
+                let nextLimit = visibleCount + STEP;
+
+                for (let i = visibleCount; i < nextLimit && i < items.length; i++) {
+                  items[i].style.display = "block";
+                }
+
+                visibleCount = nextLimit;
+
+                if (visibleCount >= items.length) {
+                  moreBtn.style.display = "none";
+                }
+            }
+            showNextItems();
+            moreBtn.addEventListener("click", showNextItems);
+
+        });
+    </script>
+
+</body>
+</html>
