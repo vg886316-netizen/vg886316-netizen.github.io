@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Student Management</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Verdana;
+        }
+        header{
+            height: 60px;
+            width: 100%;
+            background: white;
+            box-shadow: -1px 2px 6px rgb(0, 0, 0); 
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+
+        }
+        .main{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .icon{
+            height: 20px;
+            width: 200px;
+            padding: 10px;
+            margin-left: 50px;
+            margin-top: 0px;
+        }
+        .icon a{
+            text-decoration: none;
+            font-weight: bold;
+            color: black;
+            font-size: 20px;
+        }
+        header i{
+            height: 18px;
+            width: 60px;
+            padding: 10px;
+            color: white;
+            background: blue;
+            align-items: center;
+            border-radius: 8px;
+            
+        }
+        .button{
+            height: 20px;
+            width: 200px;
+            padding: 10px;
+            background-color: blue;
+            margin-right: 50px;
+            margin-top: 15px;
+            cursor: pointer;
+            border-radius: 10px;
+            
+        }
+        .button a{
+            text-decoration: none;
+            color: white;
+        }
+        /* home section */
+        /* .space{
+            height: 50px;
+            width: 100%;
+        } */
+        
+
+        .main2{
+            height: 610px;
+            width: 100%;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        .background{
+            background: url(https://images.pexels.com/photos/159775/library-la-trobe-study-students-159775.jpeg) no-repeat;
+            background-position: center;
+            background-size: cover;
+            filter: blur(0.7px);
+            box-shadow: 5px 10px 98px 10px rgb(50, 63, 248) inset;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            z-index: 1;
+
+        }
+        .page1-1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .boxes{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(7, 7, 206, 0.3);
+            backdrop-filter: blur(1px); 
+            z-index: 2;
+            padding: 50px;
+        }
+        .box1 h2{
+            font-size: 50px;
+            color: white;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+        .box1 p{
+            font-size: 18px;
+            word-spacing: 5px;
+            margin-top: 30px;
+            color: rgb(197, 197, 197);
+        }
+        .box2{
+            height: 50px;
+            width: 800px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 30px;
+            margin-bottom: 20px;
+            color: rgb(226, 223, 223);
+        }
+        .box2-1{
+            height: 20px;
+            width: 440px;
+            margin-right: 20px;
+            background-color: rgba(8, 8, 253, 0.3);
+            backdrop-filter: blur(0.7px);
+            text-align: center;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .box2-1 i{
+            color: green;
+            font-weight: bold;
+        }
+        .box3{
+            height: 50px;
+            width: 500px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+            color: white;
+        }
+        .box3-1{
+            height: 20px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            background-color: white;
+            color: blue;
+            border-radius: 10px;
+        }
+        .box3-2{
+            height: 20px;
+            width: 200px;
+            padding: 20px;
+            text-align: center;
+            background-color: blue;
+            color: white;
+            backdrop-filter: blur(2px);
+            margin-left: 20px;
+            border-radius: 10px;
+        }
+        .box3-1 a{
+            text-decoration: none;
+        }
+        .box3-2 a{
+            text-decoration: none;
+            color: white;
+        }
+
+        /* page two */
+        .main3{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            background-color: #f9fafb;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        p{
+            color: gray;
+            padding: 5px;
+        }
+        h2{
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        h3{
+            font-weight: 700;
+            font-size: 20px;
+        }
+        .feature-box{
+            width: 1000px;
+            display: grid;
+            grid-template-columns:  repeat(2, 1fr);
+            gap: 40px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .feature-box1{
+        background-color: white;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+        text-align: center;
+        width: 100%;
+        padding: 30px;
+        max-width: 420px;
+        transition: 0.3s ease;
+        }
+        .feature-box1:hover{
+            box-shadow: 0 20px 25px rgba(0,0,0,0.3);
+        }
+        .icon1{
+            background-color: rgb(158, 158, 190);
+            color: blue;
+            height: 50px;
+            width: 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 30px;
+            padding-top: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .icon2{
+            background-color: rgb(148, 185, 147);
+            color: green;height: 50px;
+            width: 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 30px;
+            padding-top: 10px;margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .icon3{
+            background-color: rgb(180, 174, 141);
+            color: brown;height: 50px;
+            width: 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 30px;
+            padding-top: 10px;margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .icon4{
+            background-color: rgb(187, 155, 155);
+            color: red;height: 50px;
+            width: 60px;
+            border-radius: 30px;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 30px;
+            padding-top: 10px;margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .feature-box1 h3{
+            margin: 20px;
+        }
+        .feature-box1 p{
+            margin-bottom: 20px;
+        }
+
+        /* page 3 */
+        #page3{
+            background-color: blue;
+            padding-top: 20px;
+        }
+        .main4{
+            padding-top: 20px;
+            padding-bottom: 50px;
+            background-color: blue;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+        }
+        .page3-p{
+            color: white;
+            padding: 5px;
+            text-align: center;
+        }
+        .page3-h2{
+            color: white;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            text-align: center;
+            font-size: 25px;
+            font-weight: 590;
+        }
+        .box4{
+            width: 1000px;
+            display: grid;
+            grid-template-columns:  repeat(2, 1fr);
+            gap: 40px;
+            padding: 20px;
+            justify-content: center;
+            align-items: center;
+        }
+        .box4-1{
+            background-color: rgb(92, 105, 252);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+            text-align: center;
+            width: 100%;
+            padding: 30px;
+            max-width: 420px;
+            transition: 0.3s ease;
+        }
+        .icon5{
+            color: orange;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 50px;
+            padding-top: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .icon6{
+            color: green;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 50px;
+            padding-top: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .icon7{
+            color: purple;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 50px;
+            padding-top: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .icon8{
+            color: yellow;
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 50px;
+            padding-top: 10px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+        .box4-1 h3{
+            margin: 20px;
+            color: white;
+        }
+        .box4-1 p{
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        /* footer section */
+
+        .footer{
+        background-color: #1f2937;
+        color: #ffffff;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+    }
+
+    .foot{
+        max-width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    .foot1{
+        display: grid;
+        gap: 2rem;
+    }
+    @media (min-width: 768px) {
+        .foot1{
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    .foot1-1 h3{
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+    .foot1-1 p{
+        color: #d1d5db;
+        margin-bottom: 1rem;
+    }
+    .foot1-1-2{
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: #2563eb;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+    .foot1-1-2:hover{
+        background-color: #1d4ed8;
+    }
+    .foot1-1-3{
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: green;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+    .foot1-1-3:hover{
+        background-color: green;
+    }
+
+    .foot1-2 h4{
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .foot1-2 ul{
+        color: #d1d5db;
+    }
+    .foot1-2 ul > * + * {
+        margin-top: 0.5rem;
+    }
+
+    .foot1-3 h4{
+        font-size: 1.125rem;
+        font-weight: 600;
+        margin-bottom: 1rem;
+    }
+    .foot1-3-1 a{
+        color: #d1d5db;
+        text-decoration: none;
+    }
+    .foot1-3-1 > * + * {
+        margin-top: 0.5rem;
+    }
+
+    .foot2{
+        border-top: 1px solid #374151;
+        margin-top: 2rem;
+        padding-top: 2rem;
+        text-align: center;
+        color: #9ca3af;
+    }
+    .main5{
+        height: 200px;
+        width: 100%;
+    }
+    .main5 h3{
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 25px;
+        font-weight: 100;
+    }
+    .main5-button{
+        margin-top: 30px;
+        margin-bottom: 40px;
+        display: flex;
+        justify-content: center;
+    }
+    .btn{
+        height: 40px;
+        width: 300px;
+        background-color: blue;
+        text-align: center;
+        padding-top: 20px;
+        border-radius: 15px;
+        cursor: pointer;
+    }
+    .btn a{
+        text-decoration: none;
+        color: white;
+    }
+
+    
+    </style>
+</head>
+<body>
+    <header>
+        <div class="main">
+            <div class="icon"><a href="#page1"><i class="fa-solid fa-house-chimney"></i> Home</a></div>
+            <div class="button">
+                <a href="view_record.php">Student Management</a>
+            </div>
+        </div>
+    </header>
+    <div class="space"></div>
+    <div class="page1">
+        <div class="main2"  id="page1">
+                <div class="background"></div>
+                <div class="page1-1">
+                <div class="boxes">
+                    <div class="box1">
+                        <h2>Student Management <br> Made Simple</h2>
+                        <p>Comprehensive student record management system with beautiful <br> interface, powerful features, and seamles data handling.</p>
+                    </div>
+                    <div class="box2">
+                        <div class="box2-1"><i class="fa-solid fa-check"></i> Easy Data Management</div>
+                        <div class="box2-1"><i class="fa-solid fa-check"></i> Beautiful Interface</div>
+                        <div class="box2-1"><i class="fa-solid fa-check"></i> Responsive Design</div>
+                    </div>
+                    <div class="box3">
+                        <div class="box3-1"><a href="view_record.php">Management Student</a></div>
+                        <div class="box3-2"><a href="#page2">View Feturest</a></div>
+                    </div>
+                </div>
+                </div>
+        </div>
+    </div>
+    <h2 align="center">Powerful Features</h2>
+    <p align="center">Everything you need to manage student records efficiently</p>
+    <div class="main3" id="page2">
+        <div class="feature-box">
+            <div class="feature-box1">
+                <div class="icon1"><i class="fa-solid fa-user-plus"></i></div>
+                <h3>Add Students</h3>
+                <p>Easily add new student records with <br> comprehensive information</p>
+            </div>
+
+            <div class="feature-box1">
+                <div class="icon2"><i class="fa-solid fa-pen"></i></div>
+                <h3>Update records</h3>
+                <p>modify student information quickly and <br> efficiently</p>
+            </div>
+
+            <div class="feature-box1">
+                <div class="icon3"><i class="fa-solid fa-eye"></i></div>
+                <h3>View details</h3>
+                <p>Access complete student profiles with <br> detailed information</p>
+            </div>
+
+            <div class="feature-box1">
+                <div class="icon4"><i class="fa-solid fa-trash"></i></div>
+                <h3>Delete Records</h3>
+                <p>Remove outdated records with <br> confirmation dialogs</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <div id="page3">
+    <h2 class="page3-h2">Advanced Analytics</h2>
+    <p class="page3-p">Get insights into your student data</p>
+    <div class="main4">
+        <div class="box4">
+            <div class="box4-1">
+                <div class="icon5"><i class="fa-solid fa-chart-simple"></i></div>
+                <h3>Real-Time Stats</h3>
+                <p>Live statistic and performance metrics</p>
+            </div>
+
+            <div class="box4-1">
+                <div class="icon6"><i class="fa-solid fa-magnifying-glass"></i></div>
+                <h3>Smart Search</h3>
+                <p>Advanced filtering and search capabilities</p>
+            </div>
+
+            <div class="box4-1">
+                <div class="icon7"><i class="fa-solid fa-chart-pie"></i></div>
+                <h3>Grade Analysis</h3>
+                <p>comprhensive grade tracking and analysis</p>
+            </div>
+
+            <div class="box4-1">
+                <div class="icon8"><i class="fa-solid fa-laptop-code"></i></div>
+                <h3>Responsive Design</h3>
+                <p>Works perfectly on all devices</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <div class="main5">
+        <h3 align="center">Ready to Get Started?</h3>
+        <p align="center">Start managing your student records with our powerful and intuitive system</p>
+        <div class="main5-button">
+            <div class="btn">
+            <a href="view_record.php"><i class="fa-solid fa-graduation-cap"></i> Start Managing Student</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="foot">
+            <div class="foot1">
+                <div class="foot1-1">
+                    <h3 style="font-family:Pacifico, serif">Student Management System</h3>
+                    <p>Comprehensive solutions for managing student records with modern interface and powerful features</p>
+                </div>
+                <div class="foot1-2">
+                    <h4>Features</h4>
+                    <ul>
+                        <li>Add student records</li>
+                        <li>Update information</li>
+                        <li>View datailed profile</li>
+                        <li>Delete records</li>
+                        <li>Advanced search & filter</li>
+              
+                     </ul>
+                </div>
+                <div class="foot1-3">
+                    <h4>Quick Links</h4>
+                    <div class="foot1-3-1">
+                        <p><a href="#page1">Home</a></p>
+                        <p><a href="view_record.php">Student Management</a></p>
+              
+                    </div>
+                </div>
+            </div>
+            <div class="foot2">
+                <p>© 2024 Student Management System. All rights reserved.</p>
+          
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>

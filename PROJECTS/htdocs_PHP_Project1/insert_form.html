@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>Insert record</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            font-family: Verdana, Geneva, sans-serif;
+            box-sizing: border-box;
+        }
+        body{
+            background: url(https://images.pexels.com/photos/8466699/pexels-photo-8466699.jpeg) no-repeat;
+            background-size: cover;
+            background-position: fixed;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .main{
+            height: 550px;
+            width: 500px;
+            border-radius: 20px;
+            background-color: rgba(255,255,255,0.15);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            padding-left: 50px;
+            padding-right: 50px;
+            padding-top: 20px;
+            padding-bottom: 20px;
+        }
+        h2{
+            font-size: 30px;
+            font-weight: 500;
+        }
+        .box{
+            height: 100px;
+            width: 100%;
+            border-radius: 2px solid black;
+        }
+        p{
+            font-size: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        input{
+            height: 40px;
+            width: 100%;
+            border: none;
+            border-radius: 20px;
+            padding-left: 30px;
+            font-size: 17px;
+            background-color: rgb(4, 4, 253);
+            color: white;
+        }
+
+        button{
+            height: 40px;
+            width: 100%;
+            border: none;
+            border-radius: 20px;
+            text-align: center;
+            font-size: 17px;
+            background-color: rgb(4, 4, 253);
+            color: white;
+            margin-top: 30px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <form action="insert_data.php" method="post">
+            <h2 align="center">Insert record</h2>
+            <div class="box">
+                <p>Rollno :</p>
+                <input type="text" name="rollno" placeholder="Enter your Rollno" required>
+            </div>
+            <div class="box">
+                <p>Name :</p>
+                <input type="text" name="name" placeholder="Enter your name" required>
+            </div>
+            <div class="box">
+                <p>Address :</p>
+                <input type="text" name="address" placeholder="Enter your address" required>
+            </div>
+            <div class="box">
+                <p>Marks :</p>
+                <input type="text" name="marks" placeholder="Enter your marks" required>
+            </div>
+
+            <div class="btn">
+                <button type="submit"> Submit record</button>
+            </div>
+        
+        </form>
+    </div>
+</body>
+</html>
