@@ -1,0 +1,92 @@
+<html>
+    <head>
+        <title>sign up page</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            body{
+               align-items: center;
+               justify-content: center;
+               background-image: url(img2.jpg);
+               background-size: cover;
+               height: 100vh;
+               display: flex;
+               user-select: none;
+                
+            }
+            .div1{
+                justify-content: center;
+                display: flex;
+                
+            }
+            .one{
+                /* backdrop-filter: blur(30px); */
+                height: max-content;
+                width: max-content;
+                border: 2px solid rgb(255, 255, 0);
+                background-color:  rgb(252, 243, 207);
+                align-items: center;
+                padding: 30px;
+                border-radius: 13px;
+
+            }
+            .one:hover{
+                box-shadow: 0px 3px 20px 5px rgb(249, 231, 159);
+            }
+            h1{
+                text-align: center;
+                font-size: 40px;
+                color: black;
+                padding-bottom: 50px;
+                font-weight: bold;
+            }
+            .button{
+                text-align: center;
+                text-decoration: none;
+                border-radius: 13px;
+                background-color: rgb(17, 17, 214);
+                cursor: pointer;
+               color: white;
+               height: 40px;
+               width: 100%;
+               border: none;
+               font-size: 15px;
+               margin-top: 20px;
+               margin-bottom: 20px;
+               transition: 0.3s;
+            }
+            .button:hover{
+                box-shadow: 0px 0px 15px 2px rgb(147, 244, 3);
+                background-color: green;
+            }
+            .one-1 input{
+                height: 30px;
+                width: 100%;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: 2px solid aqua;
+            }
+            .account{
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+      
+        
+           <div class="one">
+                <h1 class="h1">Sign Up</h1>
+
+                <div class="one-1"><input type="text" placeholder="Enter Username" required></div>
+                <div class="one-1"><input type="text" placeholder="Enter Email" required></div>
+                <div class="one-1">   <input type="password" placeholder="Enter YourPassword" required></div>
+                <div class="one-1"><input type="password" placeholder="Confirm Password" required></div>
+                <div class="one-2"><input type="checkbox" value="checkbox" required><label for="">&nbsp;i accepted terms and conditions</label> </div>
+                <a href="login.html"><input type="submit" value="SUBMIT" class="button"></a>
+                <h5>Alredy have an Account? <a href="login.html" class="account">SIGN IN</a></h5>
+           </div>
+
+    </body>
+</html>

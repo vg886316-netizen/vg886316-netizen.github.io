@@ -1,0 +1,613 @@
+<html>
+    <head>
+        <title>Amazone.com</title>
+        <link rel="shortcut icon" href="amazon_logo.jpeg" type="image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                border: border-box;
+            }
+            body{
+                align-items: center;
+                justify-content: center;
+                background-position: center;
+                
+            }
+            .navbar{
+                height: 60px;
+                background-color: black;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+             position: fixed;
+             width: 100%;   
+            }
+            .nav-logo{
+                height: 50px;
+                width: 100px;
+            }
+            .border{
+                border: 1.5px solid transparent;
+            }
+            .border:hover{
+                border: 1.5px solid white;
+            }
+            .logo{
+                background-image: url("Amazon-Emblem.jpg");
+                background-size: cover;
+                height: 50px;
+                width: 100px;
+            }
+            /* box2 */
+            .nav-address{
+                padding: 9px;
+            }
+            .add-first{
+                color: #cccccc;
+                font-size: 0.85rem;
+                margin-left: 15px;
+            }
+            .add-sec{
+                font-size: 1rem;
+                margin-left: 3px;
+            }
+            .add-icon{
+                display: flex;
+                align-items: center;
+            }
+            /* box3 */
+            .nav-search{
+                display: flex;
+                justify-content: space-evenly;
+                background-color: pink;
+                width: 620px;
+                height: 40px;
+                border-radius: 5px;
+            }
+            .search-select{
+                background-color: #f3f3f3;
+                width: 50px;
+                text-align: center;
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+                border: none;
+            }
+            .search-input{
+                width: 100%;
+                font-size: 1rem;
+                border: none;
+            }
+            .search-icon{
+                width: 45px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 1.2rem;
+                background-color: #febd68;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                color: #0f1111;
+            }
+            .nav-search:hover{
+                border: 2px solid orange;
+            }
+            /* box4 */
+            span{
+                font-size: 0.7rem;
+            }
+            .nav-singin{
+                padding: 9px;
+            }
+            .nav-second{
+                font-size: 0.85rem;
+                font-weight: 700;
+            }
+            /* box6 */
+            .nav-cart i{
+                font-size: 30px;
+            }
+            .nav-return{
+                padding: 9px;
+            }
+            .nav-cart{
+                font-size: 0.85rem;
+                font-weight: 700;
+                padding: 9px;
+            }
+            
+            /* pannel */
+            .pannel{
+                height: 40px;
+                background-color: #222f3d;
+                display: flex;
+                color: white;
+                align-items: center;
+                justify-content: space-evenly;
+            }
+            .pannel-ops a{
+                display: inline;
+                margin-left: 25px;
+                text-decoration: none;
+                color: white;
+            }
+            .pannel-ops a:hover{
+                border: 1.5px solid white;
+                padding: 5px;
+                background-color: black;
+            }
+            .pannel-ops{
+                width: 70%;
+                font-size: 0.85rem;
+            }
+            .pannel-deals{
+                font-size: 0.9rem;
+                font-weight: 700;
+            }
+            .pannel-deals a{
+                text-decoration: none;
+                color: white;
+            }
+            /* hero section */
+            .hero-section{
+                background-image: url(imgtop.jpg);
+                background-size: cover;
+                height: 390px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+            }
+            .hero-msg{
+                background-color: white;
+                color: black;
+                height: 40px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 0.85rem;
+                width: 80%;
+                margin-bottom: 25px;
+            }
+            .hero-msg a{
+                color: #007185;
+            }
+            /* shop section */
+            .shop-section{
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                background-color:  #e2e7e6;
+            }
+            .box{
+                /* border: 2px solid black; */
+                height: 400px;
+                width: 23%;
+                background-color: white;
+                border-radius: 15px;
+                padding: 20px 0px 15px;
+                margin-top: 15px;
+                margin-bottom: 15px;
+                transition: 0.2s;
+
+            }
+            .box:hover{
+                box-shadow: 0px 0px 15px 2px rgb(117, 117, 117);
+            }
+            .box-img{
+                height: 300px;
+                background-size: cover;
+                border-radius: 10px 10px 0px 0px;
+                margin-top: 1rem;
+                margin-right: 1rem;
+                margin-bottom: 1.5rem;
+            }
+            .box-content{
+                margin-left: 1rem;
+                margin-right: 16px;
+            }
+            .box-content a{
+                color: #007185;
+                text-decoration: none;
+                font-weight: bold;
+            }
+            .box-content a:hover{
+                color: blue;
+            }
+            .yexex{
+                height: 265px;
+                width: 1350;
+                margin-top: 5px;
+                padding: 10px;
+                padding-bottom: 10px;
+
+            }
+            .yexex-text{
+                font-size: 25px;
+                font-weight: 700;
+                margin-left: 15px;
+            }
+            .yexex-1{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                height: 250px;
+                width: 100%;
+            }
+            .yexex-2{
+                display: flex;
+                align-items: center;
+                justify-content: space-evenly;
+                height: 250px;
+                width: 100%;
+            }
+            .divsp{
+                height: 18px;
+                width: 100%;
+                background-color:  #e2e7e6;
+            }
+            /* footer part */
+            .foot-sign{
+                height: 150;
+                width: 100%;
+                padding: 0px 20px;
+                align-items: center;
+                justify-content: center;
+                display: flex;
+                background-color: #e2e7e6;
+            }
+            .foot-text{
+                height: 90px;
+                padding: 0px 20px;
+            }
+            .foot-sign1-1{
+                align-items: center;
+                justify-content: center;
+                display: flex;
+            }
+            .foot-sign2{
+                height: 30px;
+                width: 185px;
+                margin: 10px;
+                background-color: orange;
+                color: #0f1111;
+                border-radius: 15px;
+                border: none;
+            }
+            .foot-sign2:hover{
+                box-shadow: 0px 0px 15px 2px #a38359;
+                color: white;
+                font-size: 16px;
+                transition: 0.3s;
+            }
+            .foot-text h2{
+                font-family: poppins, sans-serif;
+                font-weight: 700;
+                font-size: 25px;
+            }
+            .foot-text p{
+                font-size: 13px;
+                text-align: center;
+            }
+            .foot-text p a{
+                color: #2162a1;
+            }
+            footer{
+                margin-top: 15px;
+            }
+            .foot-pannel{
+                background-color: #37475a;
+                color: white;
+                height: 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 0.85rem;
+            }
+            .foot-pannel a{
+                text-decoration: none;
+                color: white;
+            }
+            .foot-pannel2{
+                background-color: #222f3d;
+                color: white;
+                height: 300px;
+                display: flex;
+                justify-content: space-evenly;
+            }
+            ul{
+                margin-top: 20px;
+            }
+            ul a{
+                display: block;
+                font-size: 0.85rem;
+                color: #dddddd;
+                margin-top: 10px;
+                text-decoration: none;
+            }
+            ul a:hover{
+                text-decoration: underline;
+            }
+            .foot-pannel3{
+                background-color: #222f3d;
+                color: white;
+                border-top: 0.5px solid white;
+                height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            .foot-logo{
+                background-image: url("Amazon-Emblem.jpg");
+                background-size: cover;
+                height: 50px;
+                width: 100px;
+            }
+            .foot-pannel4{
+                background-color: #0f1111;
+                color: white;
+                height: 80px;
+                font-size: 0.7rem;
+                text-align: center;  
+            }
+            .pages{
+                padding-top: 25px;
+            }
+            .copyright{
+                padding-top: 5px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="navbar">
+                <div class="nav-logo ">
+                    <div class="logo"></div>
+                </div>
+                <div class="nav-address border">
+                    <p class="add-first">diliver to</p>
+                    <div class="add-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <p class="add-sec">&nbsp;India</p>
+                    </div>
+                </div>
+
+                <div class="nav-search">
+                    <select class="search-select">
+                        <option>All</option>
+                    </select>
+                    <input type="text" placeholder="Search Amazon" class="search-input">
+                    <div class="search-icon">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+                    </div>
+                </div>
+
+                <div class="nav-singin border">
+                    <p><span>Hellow, Sign in</span></p>
+                    <p class="nav-second">Account & Lists</p>
+                </div>
+    
+                <div class="nav-return border">
+                    <p><span>Returns</span></p>
+                    <p class="nav-second">& Order</p>
+                </div>
+
+                <div class="nav-cart border">
+                    <i class="fa-solid fa-cart-shopping"></i>
+                    Cart
+                </div>
+            </div>
+            
+            <div class="nav-gap" style="padding-bottom: 60px;">
+
+            </div>
+            <div class="pannel">
+                <div class="pannel-all">
+                    <i class="fa-solid fa-bars"></i>
+                    &nbsp;All
+                </div>
+                <div class="pannel-ops">
+                    <a href="#">Today's Deals</a>
+                    <a href="#">Customer Service</a>
+                    <a href="#">Registry</a>
+                    <a href="#">Gift Cards</a>
+                    <a href="#">Sell</a>
+                </div>
+                <div class="pannel-deals">
+                    <a href="#">Shop deals in Electronics</a>
+                </div>
+            </div>
+
+
+        </header>
+
+        <div class="hero-section">
+            <div class="hero-msg">You are on amazon.com. You can also shop on Amazon India for millions of products with fast local delivery. &nbsp;&nbsp;<a href="#">Click here to go to amazon.in</a></div>
+        </div>
+
+        <div class="shop-section">
+            <div class="box1 box">
+                <div class="box-content">
+                    <h3>New year, new supplies</h3>
+                    <div class="box-img" style="background-image: url('box1.jpg');"></div>
+                    <a href="#">See More</a>
+                </div>
+            </div>
+            <div class="box2 box">
+                <div class="box-content">
+                <h3>Get your game on</h3>
+                <div class="box-img" style="background-image: url('box2.jpg');"></div>
+                <a href="#">See More</a>
+            </div>
+        </div>
+            <div class="box3 box">
+                <div class="box-content">
+                <h3>Celebrate women life</h3>
+                <div class="box-img" style="background-image: url('box3.jpg');"></div>
+                <a href="#">See More</a>
+            </div>
+        </div>
+            <div class="box4 box">
+                <div class="box-content">
+                <h3>Cloths Brands & Combo</h3>
+                <div class="box-img" style="background-image: url('box4.jpg');"></div>
+                <a href="#">See More</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="yexex">
+            <p class="yexex-text">Top picks for India</p>
+            <div class="yexex-1">
+               <a href="#"><img src="pr1.jpg" height="200" width="200"></a>
+               <a href="#"><img src="pr2.jpg" height="200" width="247"></a>
+               <a href="#"><img src="pr3.jpg" height="200" width="150"></a>
+               <a href="#"><img src="pr4.jpg" height="200" width="300"></a>
+               <a href="#"><img src="pr5.jpg" height="200" width="100"></a>
+               <a href="#"><img src="pr6.jpg" height="200" width="230"></a>
+            </div>
+        </div>
+        <div class="divsp"></div>
+        
+        <div class="yexex">
+            <p class="yexex-text">Best seller of Month</p>
+            <div class="yexex-1">
+               <a href="#"><img src="p1.jpg" height="110" width="270"></a>
+               <a href="#"><img src="p2.jpg" height="200" width="147"></a>
+               <a href="#"><img src="p3.jpg" height="200" width="150"></a>
+               <a href="#"><img src="p4.jpg" height="200" width="190"></a>
+               <a href="#"><img src="p5.jpg" height="200" width="200"></a>
+               <a href="#"><img src="p6.jpg" height="200" width="223"></a>
+            </div>
+        </div>
+
+
+        <div class="shop-section">
+            <div class="box1 box">
+                <div class="box-content">
+                    <h3>Car & bike parts</h3>
+                    <div class="box-img" style="background-image: url('box5.jpg');"></div>
+                    <a href="#">See More</a>
+                </div>
+            </div>
+            <div class="box2 box">
+                <div class="box-content">
+                <h3>Start fitness journey</h3>
+                <div class="box-img" style="background-image: url('box6.jpg');"></div>
+                <a href="#">See More</a>
+            </div>
+        </div>
+            <div class="box3 box">
+                <div class="box-content">
+                <h3>Gaming Corner</h3>
+                <div class="box-img" style="background-image: url('box7.jpg');"></div>
+                <a href="#">See More</a>
+            </div>
+        </div>
+            <div class="box4 box">
+                <div class="box-content">
+                <h3>International brands</h3>
+                <div class="box-img" style="background-image: url('box8.jpg');"></div>
+                <a href="#">See More</a>
+            </div>
+        </div>
+        </div>
+
+        <div class="yexex">
+            <p class="yexex-text">Best seller in Books</p>
+            <div class="yexex-2">
+               <a href="#"><img src="p1-1.jpg" height="200" width="132"></a>
+               <a href="#"><img src="p1-2.jpg" height="200" width="132"></a>
+               <a href="#"><img src="p1-3.jpg" height="200" width="132"></a>
+               <a href="#"><img src="p1-4.jpg" height="200" width="132"></a>
+               <a href="#"><img src="p1-5.jpg" height="200" width="132"></a>
+               <a href="#"><img src="p1-6.jpg" height="200" width="132"></a>
+               <a href="#"><img src="p1-7.jpg" height="200" width="132"></a>
+               <a href="#"><img src="p1-8.jpg" height="200" width="132"></a>
+               <a href="#"><img src="p1-9.jpg" height="200" width="132"></a>
+            </div>
+        </div>
+
+
+        <div class="foot-sign">
+            <div class="foot-text">
+                <h2>See personalized recommendations</h2>
+                <div class="foot-sign1-1">
+                <input type="submit" value="Sign in" class="foot-sign2">
+                </div>
+                <p>New customer?<a href="#">Start here.</a></p>
+            </div>
+        </div>
+
+        <footer>
+            <div class="foot-pannel">
+               <a href="#">Back to Top</a>
+            </div>
+            <div class="foot-pannel2">
+                <ul>
+                    <p>Get to Know Us</p>
+                    <a href="#">Careers</a>
+                    <a href="#">Blog</a>
+                    <a href="#">About Amazon</a>
+                    <a href="#">Investor Relations</a>
+                    <a href="#">Amazon Devices</a>
+                    <a href="#">Amazon Science</a>
+                    
+                </ul>
+
+                <ul>
+                    <p>Make Money with Us</p>
+                    <a href="#"> Sell products on Amazon</a>
+                    <a href="#">Sell on Amazon Business</a>
+                    <a href="#">Sell apps on Amazon</a>
+                    <a href="#"> Become an Affiliate</a>
+                    <a href="#"> Advertise Your Products</a>
+                    <a href="#">Self-Publish with Us</a>
+                    <a href="#"> Host an Amazon Hub</a>
+                    <a href="#">See More Make Money with Us</a>
+                    
+                </ul>
+
+                <ul>
+                    <p>Amazon Payment Products</p>
+                    <a href="#">Amazon Business Car</a>
+                    <a href="#"> Shop with Points</a>
+                    <a href="#">Reload Your Balance</a>
+                    <a href="#">Amazon Currency Converter</a>
+                   
+                    
+                </ul>
+
+                <ul>
+                    <p>Let Us Help You</p>
+                    <a href="#">Amazon and COVID-19</a>
+                    <a href="#"> Your Account</a>
+                    <a href="#"> Your Orders</a>
+                    <a href="#"> Shipping Rates & Policies</a>
+                    <a href="#"> Returns & Replacements</a>
+                    <a href="#">Manage Your Content and Devices</a>
+                    <a href="#">Help</a>
+                    
+                </ul>
+            </div>
+
+            <div class="foot-pannel3">
+                <div class="foot-logo"></div>
+            </div>
+
+            <div class="foot-pannel4">
+                <div class="pages">
+                    <a>Condition of use</a>
+                    <a>Privacy Notice</a>
+                    <a>Your Ads Privacy Choices</a>
+                </div>
+                <div class="copyright">
+                    © 1996-2025, Amazon.com, Inc. or its affiliates
+                </div>
+            </div>
+        </footer>
+    </body>
+</html>

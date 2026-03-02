@@ -1,0 +1,85 @@
+<html>
+    <head>
+        <title>Sign In Page</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body{
+                 background-image: url(img2.jpg);
+                 background-size: cover;
+                 display: flex;
+                 user-select: none;
+                 justify-content: center;
+                align-items: center;
+            }
+            .one{
+                height: max-content;
+                width: max-content;
+                border: 2px solid rgb(255, 255, 0);
+                background-color:  rgb(252, 243, 207);
+                /* backdrop-filter: blur(5px); */
+                
+                padding: 30px;
+                border-radius: 13px;
+                margin-top: 100px;
+                
+            }
+            .one:hover{
+                box-shadow: 0px 3px 20px 5px rgb(249, 231, 159);
+            }
+            .h1{
+                text-align: center;
+                font-size: 40px;
+                color: black;
+                font-weight: bold;
+                margin-bottom: 20px;
+            }
+            .one-1 input{
+                height: 30px;
+                width: 100%;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                border: 2px solid rgb(183, 248, 5);
+            }
+            .button{
+                text-align: center;
+                border-radius: 13px;
+                background-color: rgb(17, 17, 214);
+                cursor: pointer;
+               color: white;
+               height: 40px;
+               width: 100%;
+               border: none;
+               font-size: 15px;
+               margin-top: 20px;
+               margin-bottom: 20px;
+               transition: 0.3s;
+            }
+            .button:hover{
+                box-shadow: 0px 0px 15px 2px rgb(147, 244, 3);
+                background-color: green;
+            }
+            /* .ONE-2{
+                color: RGB(174, 214, 241);
+                
+            }
+            h5{
+                color: RGB(174, 214, 241);
+                
+            } */
+        </style>
+    </head>
+    <body>
+        <div class="one">
+            <h1 class="h1">Sign In</h1>
+
+            <div class="one-1"><input type="text" placeholder="Enter Username" required></div>
+            <div class="one-1">   <input type="password" placeholder="Enter YourPassword" required></div>
+            <div class="one-2"><input type="checkbox" value="checkbox" required><label for="">&nbsp;i accepted terms and conditions</label> </div>
+            <a href="index.html"><button class="button">SUBMIT</button></a>
+            <h5>Alredy have an Account? <a href="registration.html" class="account">SIGN UP</a></h5>
+       </div>
+    </body>
+</html>
