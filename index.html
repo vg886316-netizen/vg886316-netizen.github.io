@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"/>
+    <link rel="stylesheet" href="style.css">
+    <title>Vinod</title>
+</head>
+<body>
+    <div id="loaders" class="loader-wrapper">
+        <div class="loader">
+            <div class="snake"></div>
+            <img src="images/loader.png" alt="My Photo">
+            <div class="text">LOADING...</div>
+        </div>
+    </div>
+    <div id="mainContent">
+    <header>
+        <div class="container">
+            <div class="logo">
+                &lt;<font color="red"><span>Vinod Gautam</span></font>/&gt;
+            </div>
+            <nav id="navbar">
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#project">Projects</a></li>
+                    <li><a href="#skill">Skills</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle"><i class="fa-solid fa-bars"></i></div>
+        </div>
+    </header>
+
+    <section id="home">
+        <div class="home-text">
+            <h3>Wellcome to my Portfolio</h3>
+            <h1>Hello, I <span id="typing"></span></h1>
+            <h2>Full stack Developer</h2>
+            <p>I create responsive and user-friendly websites using modern technologies like programming languages. I love building clean and attractive web interfaces.</p>
+
+            <div class="home-button">
+                <a href="vinodCV.html" target="_blank" class="btn">Download CV</a>
+                <a href="#project" class="btn btn-outline">See my works &#10140;</a>
+            </div>
+        </div>
+
+        <div class="home-image">
+            <img src="images/profile.jpeg" alt="VINOD GAUTAM">
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h1>About Me</h1>
+        
+        <div class="about-container">
+            <div class="about-image">
+                <img src="images/aboutimg.png" alt="VINOD GAUTAM">
+                <a href="vinodCV.html" target="_blank" class="cv-btn">Download CV</a>
+            </div>
+            <div class="about-content">
+                <h2>Vinod gautam</h2>
+                <p>Hello! I am a BCA student and passionated web developer, I enjoy creating modern, responsive, and user-friendly website and turning ideas into real digital experiances.</p>
+                <p>I started learning web development with a strong interest in techology and have been continuosly improving my skills by building real projects and exploring new tools and techniques.</p>
+                <p>My goal is to become a professional full-stack web developer and create high-quality websites that provide real value to users and business, I am always motivated to learn and grow in this filed.</p>
+
+                <div class="social-icons">
+                    <a href="https://wa.me/917521013187" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://instagram.com/vinodgautam950" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://facebook.com/vinod.gautam.250374" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="https://t.me/Vinodgautam" target="_blank"><i class="fa-brands fa-telegram"></i></a>
+                    <a href="https://youtube.com/@VinodCodix" target="_blank"><i class="fa-brands fa-youtube"></i></a> 
+                    <a href="https://linkedin.com/in/vinod-gautam-7bb668331" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a>  
+                </div>
+                <hr class="about-line">
+            </div>
+        </div>
+    </section>
+    <section class="certificate-section">
+        <h1>My Certificate</h1>
+
+        <div class="cards-container">
+
+            <div class="card" onclick="openModal('images/board_10th.jpg')">
+                <img src="images/BoardOfMaharashtra.webp" alt="">
+                <div class="card-body">
+                    <h3>10th certificate</h3>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('images/12th_board_result.jpg')">
+                <img src="images/BoardOfMaharashtra.webp" alt="">
+                <div class="card-body">
+                    <h3>12th certificate</h3>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('images/C_Programming_certificate.jpg')">
+                <img src="images/seekhe_india.png" alt="">
+                <div class="card-body">
+                    <h3>C Programming certificate</h3>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('images/profile.jpeg')">
+                <img src="images/seekhe_india.png" alt="">
+                <div class="card-body">
+                    <h3>Python certificate</h3>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('images/profile.jpeg')">
+                <img src="images/Yashwanrao_chavan_university.png" alt="">
+                <div class="card-body">
+                    <h3>Graduation certificate</h3>
+                </div>
+            </div>
+
+            <div class="card" onclick="openModal('images/profile.jpeg')">
+                <img src="images/Yashwanrao_chavan_university.png" alt="">
+                <div class="card-body">
+                    <h3>Graduation certificate</h3>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal" id="modal" onclick="closeModal()">
+            <span class="close">&times;</span>
+            <img src="" alt="" id="modal-img">
+        </div>
+    </section>
+    <section id="project" class="projects-section">
+        <h1 class="section-title">My Projects</h1>
+
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="images/Project1.png" alt="Project">
+                <div class="overlay">
+                    <h3>Amazone Website</h3>
+                    <p>
+                        This is a simple amazone coped website with same looks using HTML and CSS.
+                    </p>
+
+                    <a href="PROJECTS/Amazon_web/amazones.html" target="_blank" class="btn">Preview</a>
+                </div>
+            </div>
+
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="images/Project2.png" alt="Project">
+                <div class="overlay">
+                    <h3>Interior Website</h3>
+                    <p>
+                        This website is for interior work likes POP, PVC, etc using HTML, CSS and JavaScript.
+                    </p>
+                    <a href="PROJECTS/Interior_work/Index.html" target="_blank" class="btn">Preview</a>
+                </div>  
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="images/Project3.png" alt="Project">
+                <div class="overlay">
+                    <h3>Student Management Website</h3>
+                    <p>
+                        Website managing student and dat manuplation with crud operation using HTML, CSS, MySQL and PHP.
+                    </p>
+                    <a href="PROJECTS/htdocs_PHP_Project1/student_management-system.html" target="_blank" class="btn">Preview</a>
+                </div>
+            </div>
+
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="images/Project4.png" alt="Project">
+                <div class="overlay">
+                    <h3>Maxpay Website</h3>
+                    <p>
+                        This is Digital features looks and simple coped website using HTML and CSS.
+                    </p>
+
+                    <a href="PROJECTS/Maxpay_web/maxpay.html" target="_blank" class="btn">Preview</a>
+                </div>
+            </div>
+
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="images/Project5.png" alt="Project">
+                <div class="overlay">
+                    <h3>YouTube Website</h3>
+                    <p>
+                        Website for simple looks of youtube coped websites using HTML and CSS.
+                    </p>
+                    <a href="PROJECTS/Youtube_web/youtube.html" target="_blank" class="btn">Preview</a>
+                </div>  
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="images/Project6.png" alt="Project">
+                <div class="overlay">
+                    <h3>Chappanbhog Website</h3>
+                    <p>
+                        Website for simple looks of vegetables and fruits collection using HTML and CSS.
+                    </p>
+                    <a href="PROJECTS/Chappanbhog_web/food.html" target="_blank" class="btn">Preview</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="skill" class="skills-section">
+
+        <h1 class="title">My Technical Skills</h1>
+
+        <div class="skills-container">
+
+            <div class="skill-card">
+                <div class="circle" data-percent="95">
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress html"></circle>
+                    </svg>
+                    <div class="number">95%</div>
+                </div>
+                <h3>HTML</h3>
+            </div>
+
+
+            <div class="skill-card">
+                <div class="circle">
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress css"></circle>
+                    </svg>
+
+                    <div class="number">90%</div>
+                </div>
+
+                <h3>CSS</h3>
+
+            </div>
+
+
+            <div class="skill-card">
+
+                <div class="circle">
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress js"></circle>
+                    </svg>
+
+                    <div class="number">80%</div>
+                </div>
+
+                <h3>JavaScript</h3>
+
+            </div>
+
+
+            <div class="skill-card">
+                <div class="circle">
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress php"></circle>
+                    </svg>
+
+                    <div class="number">75%</div>
+                </div>
+                <h3>PHP</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="circle">
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress sql"></circle>
+                    </svg>
+
+                    <div class="number">85%</div>
+                </div>
+                <h3>MySQL</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="circle">
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress python"></circle>
+                    </svg>
+
+                    <div class="number">80%</div>
+                </div>
+                <h3>Python</h3>
+            </div>
+
+            <div class="skill-card">
+                <div class="circle">
+                    <svg>
+                        <circle cx="60" cy="60" r="50"></circle>
+                        <circle cx="60" cy="60" r="50" class="progress cpp"></circle>
+                    </svg>
+
+                    <div class="number">95%</div>
+                </div>
+                <h3>C/C++ Programming</h3>
+            </div>
+        </div>
+
+    </section>
+    <section class="tech-section">
+
+        <div class="tech-scroll">
+
+            <div class="tech-track">
+
+                <img src="images/Html.png" alt="HTML">
+                <img src="images/Css.png" alt="CSS">
+                <img src="images/Javascript.png" alt="JavaScript">
+                <img src="images/Php.png" alt="PHP">
+                <img src="images/Python.png" alt="Python">
+                <img src="images/Java.png" alt="Java">
+                <img src="images/Mysql.png" alt="MySQL">
+                <img src="images/Dotnet.png" alt=".NET">
+                <img src="images/C.png" alt="c programming">
+                <img src="images/Cpp.png" alt="cpp programming">
+                <img src="images/Html.png" alt="HTML">
+
+                <img src="images/Css.png" alt="CSS">
+                <img src="images/Javascript.png" alt="JavaScript">
+                <img src="images/Php.png" alt="PHP">
+                <img src="images/Python.png" alt="Python">
+                <img src="images/Java.png" alt="Java">
+                <img src="images/Mysql.png" alt="MySQL">
+                <img src="images/Dotnet.png" alt=".NET">
+                <img src="images/C.png" alt="c programming">
+                <img src="images/Cpp.png" alt="cpp programming">
+            </div>
+
+        </div>
+
+    </section>
+    <section class="contact" id="contact">
+
+        <h1 class="title">Get In Touch</h1>
+        <p class="typing">Available for Internship, Freelance and Full-Time Opportunities</p>
+
+        <div class="grid">
+
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+
+                <h3>Phone</h3>
+                <p id="phone">+91 9833418406</p>
+
+                <button class="copy-btn" onclick="copyText('phone')">Copy Number</button>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>          
+
+                <h3>Email</h3>
+                <p id="email">vg886316@gmail.com</p>
+
+                <button class="copy-btn" onclick="copyText('email')">Copy Email</button>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-brands fa-linkedin"></i>
+                </div>
+
+                <h3>LinkedIn</h3>
+
+                <a href="https://www.linkedin.com/in/vinod-gautam-7bb668331" target="_blank" rel="noopener noreferrer" class="action-btn" onclick="clickEffect(this)">View Profile</a>
+            </div>
+
+            <div class="card">
+                <div class="icon">
+                    <i class="fa-brands fa-github"></i>
+                </div>
+
+                <h3>GitHub</h3>
+
+                <a href="https://github.com/vg886316-netizen"  target="_blank" rel="noopener noreferrer" class="action-btn" onclick="clickEffect(this)">View Projects</a>
+            </div>
+
+        </div>
+
+
+        <div class="social">
+
+            <a href="https://wa.me/917521013187" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://www.linkedin.com/in/vinod-gautam-7bb668331" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://github.com/vg886316-netizen" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://instagram.com/vinodgautam950" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://youtube.com/@VinodCodix" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+            <a href="https://facebook.com/vinod.gautam.250374" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+        <div class="resume">
+            <a href="resume.html" target="_blank" download>Download Resume</a>
+        </div>
+
+    </section>
+    <footer class="footer">
+
+        <div class="footer-container">
+
+            <div>
+                <div class="footer-logo">Vinod Gautam</div>
+                    <div class="footer-about">
+
+                        Web Developer skilled in HTML, CSS, JavaScript, PHP, SQL, Python, Java and .NET.<br>
+                        <span style="color:#00ff88;">
+                            ● Available for Internship & Jobs
+                        </span>
+                    </div>
+                    <div class="footer-social">
+                        <a href="https://wa.me/917521013187">
+                            <i class="fa-brands fa-whatsapp"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/in/vinod-gautam-7bb668331">
+                            <i class="fa-brands fa-linkedin"></i>
+                        </a>
+
+                        <a href="https://github.com/vg886316-netizen">
+                            <i class="fa-brands fa-github"></i>
+                        </a>
+
+                        <a href="https://instagram.com/vinodgautam950">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+
+                    <a href="resume.html" target="_blank" download class="resume-btn">
+                        <i class="fa-solid fa-download"></i>
+                        Download Resume
+                    </a>
+                </div>
+                <div class="footer-links">
+                <h3>Quick Links</h3>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skill">Skills</a>
+                <a href="#project">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-links">
+                <h3>Contact Info</h3>
+                <a href="tel:7521013187">
+                    <i class="fa-solid fa-phone"></i>
+                    +91 9833418406
+                </a>
+
+                <a href="mailto:vg886316@gmail.com">
+                    <i class="fa-solid fa-envelope"></i>
+                    vg886316@gmail.com
+                </a>
+
+                <a href="https://maps.google.com/?q=Bhayandar+West+Mumbai" target="_blank">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Bhola nagar chawl, Uttan road, Near shamshan bhumi Byayander west thane 401101
+                </a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            © <span id="year"></span> Vinod Gautam | All Rights Reserved
+        </div>
+    </footer>
+    </div>
+
+    <div class="toast" id="toast">Copied!</div>
+    <a href="#home" id="scrollTopBtn"><i class="fa-solid fa-angle-up"></i></a>
+    <script src="script.js"></script>
+</body>
+</html>

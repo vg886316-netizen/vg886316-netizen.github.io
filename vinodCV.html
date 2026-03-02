@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vinod Gautam - CV</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+margin:40px;
+color:#222;
+line-height:1.5;
+}
+
+h1{
+font-size:28px;
+letter-spacing:1px;
+margin-bottom:5px;
+text-align:center;
+}
+
+.contact{
+text-align:center;
+font-size:14px;
+color:#555;
+margin-bottom:20px;
+}
+
+.section{
+margin-top:25px;
+}
+
+.section h2{
+font-size:16px;
+border-bottom:2px solid #000;
+padding-bottom:5px;
+margin-bottom:10px;
+letter-spacing:1px;
+}
+
+.title{
+font-weight:bold;
+}
+
+.date{
+float:right;
+color:#555;
+}
+
+.clear{
+clear:both;
+}
+
+ul{
+margin-top:5px;
+}
+
+li{
+margin-bottom:6px;
+}
+
+.skills p{
+margin:5px 0;
+}
+
+.highlight{
+margin-top:5px;
+}
+
+.pdf-btn{
+    padding:10px 20px;
+    font-size:14px;
+    background-color:#000;
+    color:#fff;
+    border:none;
+    cursor:pointer;
+    border-radius:4px;
+}
+
+.pdf-btn:hover{
+    background-color:#333;
+}
+</style>
+</head>
+<body>
+
+<h1>VINOD GAUTAM</h1>
+
+<div class="contact">
+Mumbai, Maharashtra | +91 7521013187 | vg886316@gmail.com <br>
+LinkedIn: linkedin.com/in/vinod-gautam-7bb668331 | GitHub: github.com/vg886316-netizen | Instagram: instagram.com/vinodgautam950
+</div>
+
+
+<!-- SUMMARY -->
+
+<div class="section">
+<h2>PROFESSIONAL SUMMARY</h2>
+<p>
+Detail-oriented BCA student and aspiring Software Developer with hands-on experience in building responsive web applications and backend systems using HTML, CSS, JavaScript, PHP, and MySQL. Strong foundation in Data Structures and problem-solving with a passion for writing clean, scalable, and efficient code.
+</p>
+</div>
+
+
+<!-- TECHNICAL SKILLS -->
+
+<div class="section skills">
+<h2>TECHNICAL SKILLS</h2>
+
+<p><strong>Programming:</strong> C, C++, Java, Python</p>
+<p><strong>Web Technologies:</strong> HTML5, CSS3, JavaScript, PHP</p>
+<p><strong>Database:</strong> MySQL</p>
+<p><strong>Tools:</strong> VS Code, XAMPP, Git</p>
+<p><strong>Core Concepts:</strong> Data Structures, OOP, DBMS, Computer Networks</p>
+
+</div>
+
+
+<!-- PROJECT EXPERIENCE -->
+
+<div class="section">
+<h2>PROJECT EXPERIENCE</h2>
+
+<div>
+<span class="title">Portfolio Website</span>
+<span class="date">2025</span>
+<div class="clear"></div>
+
+<ul>
+<li>Designed and developed a fully responsive personal portfolio website using HTML, CSS, and JavaScript.</li>
+<li>Implemented modern UI design with animations and interactive components.</li>
+<li>Optimized performance and ensured cross-device compatibility.</li>
+</ul>
+</div>
+
+<div>
+<span class="title">Login & Registration System</span>
+<span class="date">2025</span>
+<div class="clear"></div>
+
+<ul>
+<li>Developed secure authentication system using PHP and MySQL.</li>
+<li>Implemented session handling and database-driven user management.</li>
+<li>Designed structured database schema to handle user data efficiently.</li>
+</ul>
+</div>
+
+<div>
+<span class="title">Student Management System</span>
+<span class="date">2024</span>
+<div class="clear"></div>
+
+<ul>
+<li>Built CRUD-based application for managing student records.</li>
+<li>Applied structured programming logic using C++ / Python.</li>
+<li>Improved data organization and retrieval efficiency.</li>
+</ul>
+</div>
+
+</div>
+
+
+<!-- TECHNICAL HIGHLIGHTS -->
+
+<div class="section">
+<h2>TECHNICAL HIGHLIGHTS</h2>
+
+<ul>
+<li>Developed 4+ academic and personal development projects.</li>
+<li>Implemented CRUD operations and database connectivity.</li>
+<li>Built responsive layouts using Flexbox and CSS Grid.</li>
+<li>Practiced secure login authentication using PHP sessions.</li>
+</ul>
+
+</div>
+
+
+<!-- EDUCATION -->
+
+<div class="section">
+<h2>EDUCATION</h2>
+
+<span class="title">Bachelor of Computer Applications (BCA)</span>
+<span class="date">2024 – Present</span>
+<div class="clear"></div>
+
+<p>Sankar Narayan Junior College / Carmelite Convent English School</p>
+<p>12th Percentage: 67.83% | 10th Percentage: 71.60%</p>
+
+</div>
+
+
+<!-- CERTIFICATIONS -->
+
+<div class="section">
+<h2>CERTIFICATIONS & LEARNING</h2>
+
+<ul>
+<li>Web Development (Self-learning & Practical Projects)</li>
+<li>Data Structures & Algorithms Practice</li>
+<li>Continuous Learning via Online Platforms & Practice</li>
+</ul>
+
+</div>
+
+
+<!-- STRENGTHS -->
+
+<div class="section">
+<h2>STRENGTHS</h2>
+
+<ul>
+<li>Strong problem-solving ability</li>
+<li>Quick learner and adaptable</li>
+<li>Analytical thinking</li>
+<li>Team collaboration and communication</li>
+</ul>
+
+</div>
+
+<div style="text-align:center; margin-top:20px;">
+    <button onclick="downloadPDF()" class="pdf-btn">Download PDF</button>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+
+<script>
+function downloadPDF() {
+    const element = document.body;
+
+    const opt = {
+        margin: 0.5,
+        filename: 'Vinod_Gautam_Resume.pdf',
+        image: { type: 'jpeg', quality: 0.98 },
+        html2canvas: { scale: 2 },
+        jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+
+    html2pdf().set(opt).from(element).save();
+}
+</script>
+</body>
+</html>
