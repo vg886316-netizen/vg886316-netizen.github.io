@@ -77,7 +77,7 @@ let modal = document.getElementById("modal");
 let modalImg = document.getElementById("modal-img");
 
 // set password
-let correctPassword = "886316";
+let correctPassword = "vinod9218";
 
 function openModal(src){
 
