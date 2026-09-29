@@ -953,6 +953,11 @@ circle{
 .sql{stroke-dashoffset: 50;}
 .python{stroke-dashoffset: 55;}
 .cpp{stroke-dashoffset: 16;}
+.java{stroke-dashoffset: 31;}
+.os{stroke-dashoffset: 50;}
+.cs{stroke-dashoffset: 31;}
+.ds{stroke-dashoffset: 31;}
+.cn{stroke-dashoffset: 16;}
 
 
 @keyframes animate{
